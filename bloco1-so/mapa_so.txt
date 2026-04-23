@@ -8,25 +8,159 @@
 
 /proc
   
+1    3   8          devices      iomem     mounts        swaps        vmstat
+10   32  9          device-tree  ioports   net           sys          zoneinfo
+107  4   buddyinfo  diskstats    irq       pagetypeinfo  sysvipc
+11   42  bus        driver       kallsyms  partitions    thread-self
+12   47  cgroups    execdomains  kmsg      sched_debug   timer_list
+13   5   cmdline    fb           loadavg   self          tty
+14   6   consoles   filesystems  locks     slabinfo      uptime
+15   7   cpuinfo    fs           meminfo   softirqs      version
+2    78  crypto     interrupts   misc      stat          vmallocinfo
 
 /proc/cpuinfo
-  
 
+hart    : 0
+isa     : rv64acdfimsu
+mmu     : sv48 
+ 
 /proc/meminfo
   
+MemTotal:         186324 kB
+MemFree:          177452 kB
+MemAvailable:     177008 kB
+Buffers:               0 kB
+Cached:             3804 kB
+SwapCached:            0 kB
+Active:             4088 kB
+Inactive:            984 kB
+Active(anon):       1268 kB
+Inactive(anon):        0 kB
+Active(file):       2820 kB
+Inactive(file):      984 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:          1304 kB
+Mapped:             2840 kB
+Shmem:                 0 kB
+Slab:               2976 kB
+SReclaimable:        464 kB
+SUnreclaim:         2512 kB
+KernelStack:         160 kB
+PageTables:           68 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:       93160 kB
+Committed_AS:       2336 kB
+VmallocTotal:   67108863 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
 
 /proc/uptime
   
+882.26 872.42
 
 /bin
 
+2349
   
 /dev
   
+607
 
 /etc
   
-
+adjtime                      inittab                radvd.conf
+aliases                      inputrc                rc0.d
+alternatives                 iproute2               rc1.d
+appstream.conf               issue                  rc2.d
+asciidoc                     issue.d                rc3.d
+asound.conf                  issue.net              rc4.d
+audit                        kde                    rc5.d
+axelrc                       kernel                 rc6.d
+bash_completion.d            koji.conf              rc.d
+bashrc                       koji.conf.d            rdma
+bindresvport.blacklist       kojid                  rearj.cfg
+binfmt.d                     krb5.conf              redhat-release
+cheat                        krb5.conf.d            request-key.conf
+chkconfig.d                  ld.so.cache            request-key.d
+chrony.conf                  ld.so.conf             resolv.conf
+chrony.keys                  ld.so.conf.d           rhashrc
+cifs-utils                   lftp.conf              rpc
+colordiffrc                  libaudit.conf          rpkg
+crypto-policies              libblockdev            rpkg.conf
+csh.cshrc                    libguestfs-tools.conf  rpm
+csh.login                    libibverbs.d           rpmdevtools
+dblatex                      libnl                  rpmlint
+dbus-1                       libpaper.d             rsyncd.conf
+dconf                        libreport              rwtab.d
+default                      libssh                 sasl2
+depmod.d                     libuser.conf           screenrc
+dhcp                         libvirt                security
+dhcpcd.conf                  locale.conf            selinux
+dhcpcd.duid                  localtime              sensors3.conf
+dillo                        login.defs             sensors.d
+DIR_COLORS                   logrotate.d            services
+DIR_COLORS.256color          lorax                  sestatus.conf
+DIR_COLORS.lightbgcolor      lvm                    setroubleshoot
+dkms                         lynx.cfg               sgml
+dnf                          lynx.lss               shadow
+dnscrypt-proxy.conf          lynx-site.cfg          shadow-
+dnscrypt-proxy.conf.example  machine-id             shells
+dnsmasq.conf                 magic                  skel
+dnsmasq.d                    mailcap                ssh
+dracut.conf                  mail.rc                ssl
+dracut.conf.d                man_db.conf            sssd
+egl                          mc                     statetab.d
+elinks.conf                  mercurial              subgid
+environment                  mime.types             subuid
+ethertypes                   mke2fs.conf            subversion
+exports                      mock                   sudo.conf
+exports.d                    modprobe.d             sudoers
+extlinux.conf                modules-load.d         sudoers.d
+fakechroot                   motd                   sway
+favicon.png                  motd.d                 swid
+fedora-release               mtab                   sysconfig
+filesystems                  multilib.conf          sysctl.conf
+firewalld                    Muttrc                 sysctl.d
+flexiblasrc                  Muttrc.local           systemd
+flexiblasrc.d                nanorc                 system-release
+fltk                         netconfig              system-release-cpe
+fonts                        NetworkManager         tcsd.conf
+freeipmi                     networks               terminfo
+fstab                        nfs.conf               texlive
+fuse.conf                    nfsmount.conf          tigrc
+fw_env.config                nftables               tmpfiles.d
+gconf                        nsswitch.conf          tpm2-tss
+gcrypt                       nsswitch.conf.bak      Trolltech.conf
+gdbinit                      ntp                    trusted-key.key
+gdbinit.d                    nvme                   udev
+geoclue                      openldap               udisks2
+glances                      opt                    unbound
+glvnd                        os-release             urlview.conf
+gnupg                        pam.d                  usb_modeswitch.conf
+groff                        passwd                 vimrc
+group                        passwd-                virc
+group-                       pesign                 virt-builder
+gshadow                      pkcs11                 vulkan
+gshadow-                     pkgconfig              w3m
+gss                          pki                    wgetrc
+gssproxy                     plymouth               X11
+host.conf                    pm                     xattr.conf
+hostname                     polkit-1               xdg
+hosts                        popt.d                 xml
+i3                           printcap               yum.repos.d
+i3status.conf                profile                zlogin
+idmapd.conf                  profile.d              zlogout
+ImageMagick-6                protocols              zprofile
+incron.conf                  pulse                  zshenv
+incron.d                     qemu                   zshrc
+init.d                       qemu-ga
 
 # PARTE B — Questão de reflexão
 # A apresentação mostrou que o supervisor controlava o acesso a I/O
@@ -34,3 +168,5 @@
 # Em qual diretório do Linux você reconhece essa função?
 
 Resposta:
+
+Podemos reconhecer essa função no diretório /dev, ao usar o comando, em Bash, "ls /dev".
