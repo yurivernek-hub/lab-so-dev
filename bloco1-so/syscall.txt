@@ -1,6 +1,6 @@
 # Atividade 3 — Modo usuário × modo kernel
 # Preencha este arquivo durante a atividade.
-# ─────────────────────────────────────────────────────
+# ───────────────────────────────────────────
 
 # PARTE A — Observar syscalls com strace
 
@@ -9,39 +9,46 @@
 
 Saída filtrada:
 
-# Anote:
-#   Argumento 1 (file descriptor):
-#   O que está sendo escrito:
-#   Valor de retorno:
+write(1, "ola\n", 4ola
 
-fd:
-conteúdo:
-retorno:
+# Anote:
+#   Argumento 1 (file descriptor): 1
+#   O que está sendo escrito: "ola\n"
+#   Valor de retorno: 4
+
+fd: 1
+conteúdo: "ola\n"
+retorno: 4
 
 
 # PARTE B — Programa C com write() direto
 
 # Cole aqui o código de syscall_direto.c que você escreveu:
 
-[código-fonte]
+#include <unistd.h>
 
+int main() {
+    const char msg[] = "Modo usuario -> kernel via write()\n";
+    write(1, msg, sizeof(msg) - 1);
+    return 0;
+}
 
-# Cole aqui a linha write(...) da saída de strace ./syscall_direto:
+# Cole aqui a linha write(...) da saída de strace -o strace.txt ./syscall_direto:
 
-[saída do strace]
-
+write(1, "Modo usuario -> kernel via write()\n", 35) = 35
 
 # PARTE C — Questões de síntese
 
-# 1. A apresentação afirma que "instruções de I/O são privilegiadas".
-#    Como um programa de usuário consegue fazer I/O sem executar
-#    instruções privilegiadas diretamente? (mínimo 2 frases)
+# 1. A apresentação mostrou que "instruções de I/O são privilegiadas". 
+#    Com base no que o strace revelou, explique com suas palavras como um programa
+#    de usuário consegue fazer I/O sem executar instruções privilegiadas diretamente.
 
-Resposta 1:
+Resposta 1: O programa do usuário não acessa o hardware diretamente, ele faz uma chama de syscall. Quando o programa precisa de I/O ele solicita ao sistema operacional. O processador muda o modo usuário para o modo kernel, e depois o kernel executa a tarefa e devolve o controle ao programa.
 
 
-# 2. Compare write(fd, buffer, tamanho) com o "programa de canal"
-#    da apresentação: o que os dois têm em comum em termos de
-#    responsabilidades?
+# 2. Na apresentação sobre a genealogia do software, vimos que os programas de canal
+#    eram responsáveis por intermediar a transferência de dados entre a memória e os
+#    dispositivos, sem intervenção direta da CPU principal. Qual elemento do sistema 
+#    operacional moderno herda esse papel? 
 
-Resposta 2:
+Resposta 2: O elemento moderno que herda esse papel é o DMA. O controlador do DMA permite que dispositivos de hardware transfiram dados diretamente da ou para a memória RAM, liberando o processador principal para outras coisas enquanto ocorre a transferência.
